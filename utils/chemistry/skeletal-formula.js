@@ -14,7 +14,7 @@ function $$(tag, attributes) {
     return $(element);
 }
 
-function renderMolecule(molecule) {
+function renderTestMolecule(molecule) {
     var svg = $$("svg",
                  { width: "10cm", height: "10cm",
                    version: "1.1" }).appendTo(".question");
@@ -31,6 +31,16 @@ function renderMolecule(molecule) {
     svg.append(side2);
     g.append(position(side2, chainCoords(3), 135));
     return svg;
+}
+
+function toSVG(renderer) {
+    var svg = $$("svg",
+                 { width: "12cm", height: "12cm",
+                   version: "1.1" }).appendTo(".question");
+    var bounds = chainCoords(10);
+    svg.get(0).viewport.width = bounds[0];
+    svg.get(0).viewport.height = bounds[1];
+    renderer(svg);
 }
 
 function position(element, translation, rotation) {

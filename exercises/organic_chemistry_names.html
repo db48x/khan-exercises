@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-require="raphael chemistry/organic-names chemistry/skeletal-formula">
+<html data-require="underscore math raphael chemistry/organic-names chemistry/skeletal-formula">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Organic Chemistry Names</title>
@@ -8,26 +8,24 @@
 <body>
     <div class="exercise">
         <div class="problems">
-            <div id="skeletal-formula" data-weight="4">
+            <div id="skeletal-formula">
                 <div class="vars">
+                    <var id="SCENARIO">
+                        randFromArray(["2-methyl 3-ethyl 4-propyl 5-butyl 6-butyl 7-propyl 8-ethyl 9-methyl decane",
+                                       "3-ethyl 6-methyl octane",
+                                       "4-propyl heptane",
+                                       "2-methyl 5-methyl hexane",
+                                       "2-methyl propane",
+                                       "ethane"])
+                      </var>
                 </div>
 
                 <div class="question">
+                  Name this molecule:
+                  <var>toSVG(renderMolecule(SCENARIO))</var>
+                  <em>(<var>SCENARIO</var>)</em>
                 </div>
-
-                <div class="problem">
-                </div>
-
-                <div class="solution" data-type="text">
-                    <div class="instruction">
-                    </div>
-                </div>
-
-                <div class="hints">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
+                <div class="solution" data-type="text"><var>SCENARIO</var></div>
             </div>
         </div>
     </div>
